@@ -1,5 +1,5 @@
-# array_queue.py is an ArrayQueue implementation based on pseudocode and content 
-# presented in chapter 2.3 of Open Data Structures. An ArrayQueue implements 
+# array_queue.py is an ArrayQueue implementation based on pseudocode and content
+# presented in chapter 2.3 of Open Data Structures. An ArrayQueue implements
 # the (FIFO) Queue interface.
 
 from array_stack import ArrayStack
@@ -8,17 +8,17 @@ from array_stack import ArrayStack
 class ArrayQueue:
 
     def __init__(self) -> None:
-        self.array = [None for element in range(6)]
-        self.index = 0
-        self.num_elements = 0
-    
+        self.array = [None, None, 'a', 'b', 'c', None]
+        self.index = 2
+        self.num_elements = 3
+
     def get_array(self):
         return self.array
-    
-    def set_element(self, index, value):
-        y = self.array[index]
-        self.array[index] = value
-        return y
+
+    # def set_element(self, index, value):
+    #     y = self.array[index]
+    #     self.array[index] = value
+    #     return y
 
     def add(self, value):
         if self.num_elements + 1 > len(self.array):
@@ -44,9 +44,6 @@ class ArrayQueue:
 
 
 my_array = ArrayQueue()
-my_array.set_element(2, 'a')
-my_array.set_element(3, 'b')
-my_array.set_element(4, 'c')
 print(my_array.get_array())
 my_array.add('d')
 print(my_array.get_array())
@@ -54,4 +51,5 @@ my_array.add('e')
 print(my_array.get_array())
 my_array.add('f')
 print(my_array.get_array())
-
+my_array.add('g')
+print(my_array.get_array())
