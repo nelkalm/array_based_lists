@@ -4,7 +4,7 @@
 class ArrayStack:
 
     def __init__(self):
-        self.lst = [None for element in range(5)]
+        self.lst = [None for element in range(6)]
         self.num_el = 0
 
     def get_num_el(self):
