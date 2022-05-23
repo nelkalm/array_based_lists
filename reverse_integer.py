@@ -15,5 +15,19 @@ def reverse_integer(num):
     return int(''.join(num_list))
 
 
+# Use the modullo operator to get the last digit
+def reverse_integer_efficient(num):
+    reversed_integer = 0
+    remainder = 0
+
+    while num > 0:
+        remainder = num % 10
+        reversed_integer = reversed_integer * 10 + remainder
+        num //= 10
+
+    return reversed_integer
+
+
 if __name__ == '__main__':
     print(reverse_integer(1234))
+    print(reverse_integer_efficient(1234))
