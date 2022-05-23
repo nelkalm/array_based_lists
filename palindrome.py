@@ -17,7 +17,7 @@ def is_palindrome(str):
     return False
 
 
-def is_palindrome_efficient(str):
+def is_palindrome_2(str):
     if str == str[::-1]:
         return True
     return False
