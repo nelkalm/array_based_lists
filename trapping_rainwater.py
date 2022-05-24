@@ -14,6 +14,30 @@ def water_trap(num_list):
     return trapped_water
 
 
+# Dynamic programming approach
+def water_trap_efficient(heights):
+    if len(heights) < 3:
+        return 0
+
+    left_max = [0 for _ in range(len(heights))]
+    right_max = [0 for _ in range(len(heights))]
+
+    # left max items
+    for i in range(1, len(heights)):
+        left_max[i] = max(left_max[i - 1], heights[i - 1])
+
+    # right max items
+    for i in range(len(heights) - 2, -1, -1):
+        right_max[i] = max(right_max[i + 1], heights[i + 1])
+
+    # consider items in O(N) and sum up the trapped rain water units
+    trapped = 0
+
+    for i in range(1, len(heights) - 1):
+        if min(left_max[i], right_max[i]) > heights[i]:
+            trapped += min(left_max[i], right_max[i]) - heights[i]
+
+
 if __name__ == '__main__':
     print(water_trap([4, 1, 3, 1, 5]))
     print(water_trap([2, 1, 3, 1, 4]))
