@@ -21,7 +21,7 @@ def is_anagram_efficient(word1, word2):
     word1 = sorted(word1)
     word2 = sorted(word2)
 
-    # compare characters for each index
+    # compare characters for each index, O(N)
     for index in range(len(word1)):
         if word1[index] != word2[index]:
             return False
